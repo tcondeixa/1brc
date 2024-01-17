@@ -15,8 +15,6 @@ import (
 type Measures = [4]float64
 type City = string
 
-var m = make(map[City]Measures)
-
 func main() {
 
 	// f, err := os.Create("cpu.prof")
@@ -28,6 +26,8 @@ func main() {
 	// 	panic(err)
 	// }
 	// defer pprof.StopCPUProfile()
+
+    var m = make(map[City]Measures)
 
 	a, err := os.ReadFile("measurements.txt")
 	if err != nil {
