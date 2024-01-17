@@ -74,7 +74,7 @@ func main() {
 		for k, r := range p {
 			val, ok := m[k]
 			if !ok {
-				m[k] = [4]float64{r[0], r[1], r[2], r[3]}
+				m[k] = Measures{r[0], r[1], r[2], r[3]}
 			} else {
 				if r[0] < val[0] {
 					val[0] = r[0]
