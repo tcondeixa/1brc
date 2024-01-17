@@ -27,7 +27,7 @@ func main() {
 	// }
 	// defer pprof.StopCPUProfile()
 
-    var m = make(map[City]Measures)
+	var m = make(map[City]Measures)
 
 	a, err := os.ReadFile("measurements.txt")
 	if err != nil {
@@ -97,14 +97,14 @@ func main() {
 	}
 	slices.Sort(orderCities)
 
-    fmt.Print("{")
+	fmt.Print("{")
 	for i, city := range orderCities {
 		fmt.Printf("%s=%.1f/%.1f/%.1f", city, m[city][0], m[city][3]/m[city][2], m[city][1])
 		if i < len(orderCities)-1 {
 			fmt.Print(", ")
 		}
 	}
-    fmt.Println("}")
+	fmt.Println("}")
 }
 
 func processChunk(c chan map[City]Measures, chunk []byte) {
